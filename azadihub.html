@@ -1,0 +1,208 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aazadi hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --yellow-1: #fff8e1;
+      --yellow-2: #ffe082;
+      --accent: #ffca28;
+      --dark: #222;
+      --glass: rgba(255,255,255,0.6);
+      --shadow: 0 8px 30px rgba(0,0,0,0.12);
+    }
+    *{box-sizing: border-box}
+    body{
+      margin:0;
+      font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: linear-gradient(120deg,var(--yellow-1), var(--yellow-2));
+      color:var(--dark);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:32px;
+    }.card{
+  width:100%;
+  max-width:980px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.85));
+  border-radius:18px;
+  padding:28px;
+  box-shadow: var(--shadow);
+  display:grid;
+  grid-template-columns: 1fr 420px;
+  gap:20px;
+  align-items:center;
+  backdrop-filter: blur(6px) saturate(120%);
+}
+
+header{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  margin-bottom:6px;
+}
+
+.logo{
+  width:72px;
+  height:72px;
+  border-radius:12px;
+  display:grid;
+  place-items:center;
+  background: linear-gradient(135deg,#fff2cc, var(--accent));
+  font-weight:800;
+  font-size:20px;
+  color:#3b2f00;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08), inset 0 -6px 16px rgba(255,255,255,0.35);
+  transform: rotate(-6deg);
+}
+
+h1{font-size:28px;margin:0 0 6px 0; letter-spacing:0.4px}
+p.lead{margin:0;color:#4a3f00; font-weight:500}
+
+.badge{display:inline-block;padding:6px 10px;border-radius:999px;background:#fff6d8;border:1px solid rgba(0,0,0,0.04);font-weight:600;font-size:13px;margin-top:12px}
+
+.desc{
+  margin-top:14px;
+  font-size:15px;
+  line-height:1.6;
+  color:#4b3d00;
+}
+
+/* video column */
+.media{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.video-wrap{
+  width:100%;
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  border: 6px solid rgba(255,255,255,0.6);
+  background:linear-gradient(180deg, #000, #111);
+  position:relative;
+}
+
+video{
+  display:block;
+  width:100%;
+  height:auto;
+  background:black;
+}
+
+/* play overlay */
+.play-btn{
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  width:86px;height:86px;border-radius:50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.25), rgba(255,255,255,0.08));
+  display:grid;place-items:center;font-size:0;cursor:pointer;box-shadow:0 8px 30px rgba(0,0,0,0.2);
+  transition: transform .18s ease;
+}
+.play-btn:hover{transform:translate(-50%,-50%) scale(1.04)}
+.play-tri{width:0;height:0;border-left:22px solid #fff;border-top:14px solid transparent;border-bottom:14px solid transparent;margin-left:6px}
+
+.meta{display:flex;flex-direction:column;gap:8px}
+
+.controls{margin-top:12px;display:flex;gap:10px;align-items:center}
+.btn{padding:10px 14px;border-radius:999px;background:transparent;border:1px solid rgba(0,0,0,0.06);font-weight:700;cursor:pointer}
+
+footer{margin-top:18px;color:#5a4810;font-size:13px}
+
+/* responsive */
+@media (max-width:860px){
+  .card{grid-template-columns:1fr; padding:20px}
+  .media{order:-1}
+}
+
+/* subtle floating animation */
+@keyframes floaty{0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)}}
+.logo{animation: floaty 4.5s ease-in-out infinite}
+
+/* decorative confetti */
+.confetti{position:absolute;inset:0;pointer-events:none;mix-blend-mode:multiply}
+.confetti span{position:absolute;display:block;width:8px;height:8px;border-radius:2px;opacity:0.95;transform:rotate(20deg)}
+
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div>
+      <header>
+        <div class="logo">AH</div>
+        <div>
+          <h1>Aazadi hub</h1>
+          <p class="lead">vitto vitto kandu kondu vitto</p>
+          <div class="badge"> Creative video page</div>
+        </div>
+      </header><p class="desc">Welcome to <strong>Aazadi hub</strong> — a bright little page that celebrates freedom, curiosity and short playful content. This page intentionally keeps things simple: a single striking video at the right, bold type and a friendly, warm theme so enjoy my dear friends.</p>
+
+  <div class="controls">
+    <button class="btn" onclick="document.querySelector('video').play()">Play</button>
+    <button class="btn" onclick="document.querySelector('video').pause()">Pause</button>
+    <button class="btn" onclick="document.querySelector('video').currentTime=0">Restart</button>
+  </div>
+
+  <footer>Made with ☀️ — Aazadi hub</footer>
+</div>
+
+<div class="media">
+  <div class="video-wrap" aria-hidden="false">
+    <!--
+      Replace the <source> src with your video's filename (e.g. "my-video.mp4") or an absolute URL.
+      Keep the MP4 fallback for browser compatibility. If you host on GitHub Pages, place the video file in the same repo and reference it here.
+    -->
+    <video id="theVideo" poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1280' height='720' viewBox='0 0 1280 720'%3E%3Crect width='100%25' height='100%25' fill='%23ffefc3'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%233b2f00' font-family='Poppins, Arial' font-size='36'%3EAazadi hub - replace video%3C/text%3E%3C/svg%3E" controls>
+      <source src="sample-video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <div class="play-btn" id="bigPlay" title="Play video">
+      <div class="play-tri"></div>
+    </div>
+  </div>
+</div>
+
+<!-- decorative confetti (small) -->
+<div class="confetti" aria-hidden="true">
+  <span style="left:6%;top:12%;background:#ffd54f"></span>
+  <span style="left:18%;top:70%;background:#fff176"></span>
+  <span style="left:34%;top:8%;background:#ffe082"></span>
+  <span style="left:66%;top:22%;background:#ffd54f"></span>
+  <span style="left:82%;top:64%;background:#fff59d"></span>
+</div>
+
+  </div>  <script>
+    const video = document.getElementById('theVideo');
+    const bigPlay = document.getElementById('bigPlay');
+
+    // Big play overlay toggles play/pause
+    bigPlay.addEventListener('click', ()=>{
+      if(video.paused){ video.play(); bigPlay.style.display='none' }
+      else{ video.pause(); }
+    });
+
+    // hide big-play when user uses native controls
+    video.addEventListener('play', ()=> bigPlay.style.display='none');
+    video.addEventListener('pause', ()=> bigPlay.style.display='flex');
+
+    // initially show the overlay
+    if(video.paused) bigPlay.style.display='flex';
+
+    // small tweak: clicking video toggles play/pause
+    video.addEventListener('click', ()=>{
+      if(video.paused) video.play(); else video.pause();
+    });
+  </script></body>
+</html>
